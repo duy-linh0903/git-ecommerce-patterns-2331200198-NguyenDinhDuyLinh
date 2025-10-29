@@ -13,14 +13,17 @@ class OrderTracker {
 
     removeObserver(observer) {
         // TODO: Remove the observer from the `this.observers` array.
-        this.observers.pop(observer);
+        const index = this.observers.indexOf(observer);
+        if (index>=0) {
+            this.observers.splice(index, 1);
+        }
     }
 
     notifyObservers() {
         // TODO: Loop through all observers and call their `update` method.
         // Pass `this.orderId` and `this.status` to the update method.
         for (var i = 0;i<this.observers.length;i++) {
-            this.observers[i].update(this.observers.orderId,this.observers.status);
+            this.observers[i].update(this.orderId, this.status);
         }
     }
 
