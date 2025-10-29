@@ -38,9 +38,9 @@ class ProductFactory {
         // Pass the `details` object to the constructor of the chosen class.
 
         switch(type) {
-            case 'Book':  
+            case 'book':  
                 return new Book(details);
-            case 'Electronic':
+            case 'electronic':
                 return new Electronic(details);
             default:
                 return new Product(details);
